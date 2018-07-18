@@ -11,6 +11,15 @@
 <div id="graphDiv" style=""></div>
 
 <script>
+    function colorFromStatus(status){
+        if(status === "Missing Info") {
+            return 'rgb(255, 0, 0)'
+        } else {
+            return 'rgb(0, 102, 255)'
+        }
+    }
+
+    
     Plotly.d3.csv('https://raw.githubusercontent.com/PhilipAxelrod/Rhode-Island-Schools-Map/master/RhodeIsland_Map2.csv', function(err, rows){
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
